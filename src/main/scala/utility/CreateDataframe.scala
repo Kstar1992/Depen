@@ -1,6 +1,6 @@
+package utility
+
 import org.apache.spark.sql.{DataFrame, SQLContext}
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.{SparkConf, SparkContext}
 /**
   * Created by kunal on 30/1/17.
