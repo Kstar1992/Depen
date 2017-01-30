@@ -1,4 +1,4 @@
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.{DataFrame, SQLContext}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.{SparkConf, SparkContext}
@@ -8,7 +8,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object CreateDataframe {
 
 
-  def getDataframe(path: String = "/home/kunal/Documents/Risk Models/CoefficientNaming.csv"): Dataframe = {
+  def getDataframe(path: String = "/home/kunal/Documents/Risk Models/CoefficientNaming.csv"): DataFrame = {
     val sparkConf = new SparkConf().setMaster("local[*]").setAppName("CMSHCCLocal")
     val sc = new SparkContext(sparkConf)
     val sqlContext = new SQLContext(sc)
