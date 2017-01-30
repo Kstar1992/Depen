@@ -8,13 +8,13 @@ import org.apache.spark.{SparkConf, SparkContext}
 object CreateDataframe {
 
 
-  def getDataframe(path: String = "/home/kunal/Documents/Risk Models/CoefficientNaming.csv"): DataFrame = {
+  def getDataframe(path: String): DataFrame = {
     val sparkConf = new SparkConf().setMaster("local[*]").setAppName("CMSHCCLocal")
     val sc = new SparkContext(sparkConf)
     val sqlContext = new SQLContext(sc)
     val ipDFPersonCSV = sqlContext.read.format("com.databricks.spark.csv")
       .option("header", "true")
-      .load("src/main/resources/hccmodels/cmshcc/person2.csv")
+      .load(path)
     ipDFPersonCSV
   }
 
