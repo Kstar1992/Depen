@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object CreateDataframe {
 
-
+ //This is Version 2
   def getDataframe(path: String): DataFrame = {
     val sparkConf = new SparkConf().setMaster("local[*]").setAppName("CMSHCCLocal")
     val sc = new SparkContext(sparkConf)
