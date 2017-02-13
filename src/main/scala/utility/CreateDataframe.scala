@@ -13,8 +13,7 @@ object CreateDataframe {
     val sc = new SparkContext(sparkConf)
     val sqlContext = new SQLContext(sc)
     val ipDFPersonCSV = sqlContext.read.format("com.databricks.spark.csv")
-      .option("header", "true")
-      .load(path)
+      .option("header", "true").load(path)
     ipDFPersonCSV
   }
 
