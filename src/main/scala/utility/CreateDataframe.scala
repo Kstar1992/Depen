@@ -12,8 +12,7 @@ object CreateDataframe {
     val sparkConf = new SparkConf().setMaster("local[*]").setAppName("CMSHCCLocal")
     val sc = new SparkContext(sparkConf)
     val sqlContext = new SQLContext(sc)
-    val ipDFPersonCSV = sqlContext.read.format("com.databricks.spark.csv")
-      .option("header", "true").load(path)
+    val ipDFPersonCSV = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").load(path)
     ipDFPersonCSV
   }
 
